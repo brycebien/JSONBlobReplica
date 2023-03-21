@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JSONBlob Replica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        .written{
+            width:100%;
+            height:80vh;
+            background-color: white;
+        }
+        .row{
+            margin-left:10px;
+            margin-right:10px;
+            margin-top:10px;
+        }
+    </style>
+</head>
+
+  <body>
+    <div class="row">
+        <div class="col-lg-6" style="background-color: green;">
+            <div class="container-write">
+                <h1>Write</h1>
+                <textarea class="data" style="width:100%; height:80vh"></textarea>
+                <button class="button-create">Create New</button>
+                <button class="button-write">Write</button>
+            </div>
+        </div>
+
+    
+        <div class="col-lg-6" style="background-color: red;">
+            <div class="row">
+                <div class="container-written">
+                    <h1>Written</h1>
+                    <div class="written" style="width:100%; height:80vh"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script>
+        $('.button-write').click(function(){
+            //call the PUT function
+        });
+
+        $('.button-create').click(function(){
+            $('.data')[0].value='';
+            //call the POST function
+        });
+
+        setInterval(() => {
+            let data=$('.data')[0];
+            let written=$('.written')[0];
+            written.innerText=data.value;
+        }, 10);
+    </script>
+  </body>
+</html>
